@@ -5,7 +5,7 @@ load_dotenv()
 
 class Config:
     # --- Telegram API Config ---
-    API_ID = int(os.environ.get("API_ID", 12345))
+    API_ID = int(os.environ.get("API_ID", "12345"))
     API_HASH = os.environ.get("API_HASH", "")
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
     
@@ -18,10 +18,12 @@ class Config:
     GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
     ENABLE_AI = True
     
-    # --- Bot Customization ---
-    START_MSG = os.environ.get("START_MSG", "👋 Hello {user}, I am an Advanced Autofilter Bot with AI capabilities!")
-    BOT_PICS = os.environ.get("BOT_PICS", "https://telegra.ph/file/default.jpg").split()
+    # --- Customization ---
+    START_MSG = os.environ.get("START_MSG", "👋 Hello {user}, I am the most advanced Autofilter Bot with AI capabilities!")
+    PICS = os.environ.get("PICS", "https://telegra.ph/file/default.jpg").split()
+    RESULTS_COUNT = 10 # Results per page
     
-    # --- Admin Config ---
+    # --- Admin & Security ---
     ADMINS = [int(admin) for admin in os.environ.get("ADMINS", "").split()]
-    CHANNELS = [int(ch) for ch in os.environ.get("CHANNELS", "").split()] # Channels to index
+    CHANNELS = [int(ch) for ch in os.environ.get("CHANNELS", "").split()]
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", "0"))
