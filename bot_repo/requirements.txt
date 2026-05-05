@@ -1,0 +1,10 @@
+# Advanced Telegram Autofilter Bot - AI Integrated
+# Repository Requirements
+
+pyrogram
+tgcrypto
+motor
+google-generativeai
+python-dotenv
+aiohttp
+beautifulsoup4
